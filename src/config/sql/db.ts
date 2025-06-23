@@ -1,5 +1,5 @@
 import {Sequelize} from 'sequelize-typescript'
-import User from '@/schema/user'
+import User from '@/models/user'
 import * as process from 'node:process'
 
 //创建数据库连接实例

@@ -4,7 +4,7 @@ import path from 'path'
 import fs from 'fs'
 
 // 假设当前文件所在的目录为基准，指定统一的日志文件夹
-const logDirectory = path.join(path.resolve(__dirname, '../..'), 'src', 'logs')
+const logDirectory = path.join(path.resolve(__dirname, '../../..'), 'src', 'logs')
 
 // 确保日志文件夹存在
 if (!fs.existsSync(logDirectory)) {

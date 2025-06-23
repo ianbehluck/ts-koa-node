@@ -1,9 +1,8 @@
 import {ctxBody} from '@/utils'
-import seq from '@/config/db'
+import seq from '@/config/sql/db'
 import {toInteger} from 'lodash'
 
 seq
-
 
 /*
 * 构建一个分页查询

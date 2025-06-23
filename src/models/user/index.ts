@@ -1,5 +1,6 @@
 import { Column, DataType, Table, Length } from 'sequelize-typescript'
-import BaseModel from '@/schema/baseModal'
+import BaseModel from '@/models/baseModal'
+import {z} from "koa-swagger-decorator";
 
 @Table({
   tableName: 'user',

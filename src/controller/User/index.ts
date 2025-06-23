@@ -10,9 +10,10 @@ import {
 } from './type'
 import { ParsedArgs, z } from 'koa-swagger-decorator'
 import { ICreateUserReq } from '@/controller/User/type'
-import User from '@/schema/user'
+import User from '@/models/user'
 import { ctxBody, deleteByIdMiddleware, paginationMiddleware } from '@/utils'
 import { paginationQuery } from '@/controller/common/queryType'
+import {setBotCommands} from "../../tg/telegram.js";
 
 class UserController {
 
@@ -31,6 +32,7 @@ class UserController {
     }
   ])
   async CreateUser(ctx: Context, args: ParsedArgs<ICreateUserReq>) {
+    // @ts-ignore
     await User.create(args.body)
       .then((res: any) => {
         ctx.body = ctxBody({
@@ -61,6 +63,7 @@ class UserController {
   })
   @responses(GetAllUserRes)
   async getUserList(ctx: Context, args: ParsedArgs<ICreateUserReq>) {
+    // await setBotCommands();   //设置tg 机器人菜单
     await paginationMiddleware(ctx, User, '查询用户列表')
   }
 

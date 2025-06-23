@@ -5,7 +5,7 @@ import koaBody from 'koa-body'
 import path from 'path'
 import onError from 'koa-onerror'
 import staticFiles from 'koa-static'
-import { error, trace } from '@/config/log4j'
+import { error, trace } from '@/config/log/log4j'
 import { ctxBody } from '@/utils'
 
 
